@@ -15,7 +15,8 @@ gem 'paperclip'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'shoulda-matchers', '2.8.0'
+  gem 'factory_girl_rails'
   gem 'byebug'
-  gem 'spring'
 end
