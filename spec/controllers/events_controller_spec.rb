@@ -15,13 +15,13 @@ RSpec.describe EventsController, type: :controller do
     end
   end
 
-  describe '#show' do
+  describe '#edit' do
     let(:event) { create :event }
 
-    before { get :show, id: event.id }
+    before { get :edit, id: event.id }
 
-    it 'render :show template' do
-      expect(response).to render_template(:show)
+    it 'render :edit template' do
+      expect(response).to render_template(:edit)
     end
 
     it 'assigns event' do

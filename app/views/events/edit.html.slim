@@ -1,0 +1,17 @@
+h3 = "Editing #{@event.name}"
+
+= form_for @event do |f|
+  .input-field
+      = f.label :name
+      = f.text_field :name
+
+
+  .file-field.input-field
+    .btn
+      span File
+      = f.file_field 'images_attributes[image_file]', multiple: true
+
+    .file-path-wrapper
+      input.file-path.validate type="text" placeholder="Upload one or more files"
+
+  = f.submit
