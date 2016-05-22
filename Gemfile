@@ -15,6 +15,7 @@ gem 'paperclip'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'byebug'
   gem 'spring'
 end
