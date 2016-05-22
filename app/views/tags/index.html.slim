@@ -1,0 +1,8 @@
+.header.right-align
+  = link_to 'New tag', new_tag_path, class: 'waves-effect waves-light btn'
+
+- if @tags.any?
+  ul.collection
+    = @tags.each do |tag|
+      li.collection-item
+        = tag.label
