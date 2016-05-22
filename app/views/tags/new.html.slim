@@ -1,0 +1,10 @@
+.header.right-align
+  = link_to 'Tags list', tags_path, class: 'waves-effect waves-light btn'
+
+.row
+  = form_for @tag do |f|
+    .input-field
+      =f.label :label
+      = f.text_field :label
+
+    = f.submit

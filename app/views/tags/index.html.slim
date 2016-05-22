@@ -3,6 +3,6 @@
 
 - if @tags.any?
   ul.collection
-    = @tags.each do |tag|
+    - @tags.each do |tag|
       li.collection-item
         = tag.label
