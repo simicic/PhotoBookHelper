@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
+gem 'slim'
 gem 'materialize-sass'
 gem 'paperclip'
 
