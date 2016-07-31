@@ -5,4 +5,6 @@ class Image < ActiveRecord::Base
 
   belongs_to :tag
   belongs_to :event
+
+  acts_as_list scope: :event
 end
