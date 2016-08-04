@@ -1,5 +1,4 @@
 h3 = @event.name
-= link_to 'Edit event', edit_event_path(@event), class: 'waves-effect waves-light btn'
 
-- @event.images.each do |image|
-  = image_tag(image.image_file.url(:thumb))
+= link_to 'Select images from the event', event_image_path(@event, @event.images.first), class: 'waves-effect waves-light btn'
+= link_to 'Edit event', edit_event_path(@event), class: 'waves-effect waves-light btn'
