@@ -1,10 +1,11 @@
-.header.right-align
-  = link_to 'Events list', events_path, class: 'waves-effect waves-light btn'
+.container
+  .header.right-align
+    = link_to 'Events list', events_path, class: 'waves-effect waves-light btn'
 
-.row
-  = form_for @event do |f|
-    .input-field
-      =f.label :name
-      = f.text_field :name
+  .row
+    = form_for @event do |f|
+      .input-field
+        =f.label :name
+        = f.text_field :name
 
-    = f.submit
+      = f.submit
