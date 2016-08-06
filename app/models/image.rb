@@ -7,4 +7,6 @@ class Image < ActiveRecord::Base
   belongs_to :event
 
   acts_as_list scope: :event
+
+  scope :tagged_with, -> (tag) { where(tag: tag) }
 end

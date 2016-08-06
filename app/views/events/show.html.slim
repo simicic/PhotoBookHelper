@@ -1,5 +1,18 @@
 .container
-  h3 = @event.name
+  .section.row
+    .col.s6
+      h3 = @event.name
+    .col.s6.valign.center-align = link_to 'Edit event', edit_event_path(@event), class: 'waves-effect waves-light btn'
 
-  = link_to 'Select images from the event', event_image_path(@event, @event.images.first), class: 'waves-effect waves-light btn'
-  = link_to 'Edit event', edit_event_path(@event), class: 'waves-effect waves-light btn'
+  .section
+    = link_to 'Select images from the event', event_image_path(@event, @event.images.first)
+
+  - @tags.each do |tag|
+    .section
+      - tag_images = @event.images.tagged_with(tag)
+
+      - if tag_images.any?
+        h5 = "Images with: \"#{tag.label}\" (#{tag_images.count})"
+        - tag_images.each do |image|
+          = image_tag(image.image_file.url(:thumb))
+
