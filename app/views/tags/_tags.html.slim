@@ -1,0 +1,5 @@
+- tags.each do |tag|
+  .section
+    = form_for [@event, @image], remote: true do |f|
+      = f.hidden_field :tag_id, value: tag.id
+      = f.submit tag.label, class: ("#{'btn ' + 'teal lighten-2' if (@image.tag_id == tag.id)}")

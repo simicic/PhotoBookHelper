@@ -10,3 +10,6 @@
       = link_to 'Next', event_image_path(@image.event, @image.higher_item), class: 'waves-effect waves-light btn'
     - else
       = link_to 'Next', '#', class: 'grey btn', disabled: true
+
+    .tags.section
+      = render 'tags/tags', tags: @tags, event: @event, image: @image

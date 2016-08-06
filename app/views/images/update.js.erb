@@ -1,0 +1,1 @@
+$(".tags.section").html("<%= raw escape_javascript(render(:partial => 'tags/tags', locals: { tags: @tags, event: @event, image: @image })) %>")
