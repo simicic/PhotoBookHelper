@@ -8,6 +8,11 @@ class TagsController < ApplicationController
     @tag = Tag.new
   end
 
+  def move_tagged_images
+    system("rake move_tagged_images[#{params[:tag_id]},#{params[:event_id]}]")
+    redirect_to :back
+  end
+
   def create
     @tag = Tag.new(tag_params)
 

@@ -16,3 +16,4 @@
         - tag_images.each do |image|
           = image_tag(image.image_file.url(:thumb))
 
+      p= link_to 'Export to desktop', tag_move_tagged_images_path(tag, event_id: @event.id)
