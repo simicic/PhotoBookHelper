@@ -12,6 +12,7 @@ gem 'acts_as_list'
 gem 'slim'
 gem 'materialize-sass'
 gem 'paperclip'
+gem 'exifr'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
