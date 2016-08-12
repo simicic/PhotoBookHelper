@@ -5,7 +5,7 @@
     .col.s6.valign.center-align = link_to 'Edit event', edit_event_path(@event), class: 'waves-effect waves-light btn'
 
   .section
-    = link_to 'Select images from the event', event_image_path(@event, @event.images.first)
+    = link_to 'Select images from the event', event_image_path(@event, @event.images.first) if @event.images.any?
 
   - @tags.each do |tag|
     .section
@@ -14,6 +14,5 @@
       - if tag_images.any?
         h5 = "Images with: \"#{tag.label}\" (#{tag_images.count})"
         - tag_images.each do |image|
-          = image_tag(image.image_file.url(:thumb))
-
-      p= link_to 'Export to desktop', tag_move_tagged_images_path(tag, event_id: @event.id)
+          = link_to image_tag(image.image_file.url(:thumb)), event_image_path(@event, image)
+        p= link_to 'Export to desktop', tag_move_tagged_images_path(tag, event_id: @event.id)
